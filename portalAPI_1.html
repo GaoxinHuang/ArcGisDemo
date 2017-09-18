@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Fun with Portal Items</title>
+  <style>
+    html,
+    body {
+      font-family: sans-serif;
+      padding: 0;
+      margin: 0 !important;
+      height: 100%;
+      width: 100%;
+    }
+    #viewDiv {
+      position: absolute;
+      right: 0;
+      left: 300px;
+      top: 0;
+      bottom: 0;
+    }
+    #itemDiv {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 300px;
+      overflow-y: auto;
+    }
+    .description {
+      margin: 0 auto;
+      width: 100%;
+      padding: 20px;
+    }
+    .card h6 {
+      margin: 0 !important;
+    }
+  </style>
+  <link href="http://esri.github.io/calcite-bootstrap/assets/css/calcite-bootstrap-open.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://js.arcgis.com/4.3/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.3/"></script>
+</head>
+<body>
+  <div id="itemDiv">
+    <label class="description">Add layer items to Map</label>
+    <ul class="cards-list">
+    </ul>
+  </div>
+  <div id="viewDiv"></div>
+  <script src="scripts/ArcGIS/Section3/PortalAPI14.js"></script>
+</body>
+</html>
