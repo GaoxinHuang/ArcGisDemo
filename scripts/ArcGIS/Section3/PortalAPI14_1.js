@@ -16,7 +16,7 @@ require([
     on
 ) {
 
-    // create a card template to display Portal Item Information
+    // create a card template to display Portal Item Information, 右边的template
     const template = `
     <li data-itemid="{id}">
     <article class="card"><img src="{thumbnailUrl}" alt="Card Thumbnail">
@@ -55,7 +55,7 @@ require([
     const $cardsList = document.querySelector(".cards-list");
     view.then(() => {
         // Create new PortalItem instances from our list
-        const portalItems = layerItems.map(id => (new PortalItem({ id }).load()));
+        const portalItems = layerItems.map(id => (new PortalItem({ id }).load())); //
         // Use dojo/promise/all to wait for all
         // PortalItem Promises to complete.
         all(portalItems).then(items => {
@@ -70,12 +70,12 @@ require([
                 // add listener for when checkbox is checked
                 on(elem, "input:click", ({ target }) => {
                     if (target.checked && !layer) {
-                        if (item.isLayer) {
+                        if (item.isLayer) { //PortalItem可以查看是否是 Layer, 如果是就
                             // This static method creates layers from
                             // Portal Items
                             Layer.fromPortalItem({
                                 portalItem: item
-                            }).then(function (lyr) {
+                            }).then(function (lyr) { // 这个promise的return 是 layer
                                 // Now you can add the Layer to the map
                                 layer = lyr;
                                 map.add(lyr);

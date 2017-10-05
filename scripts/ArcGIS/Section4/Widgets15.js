@@ -12,7 +12,7 @@ require([
     "esri/widgets/BasemapToggle",
     "esri/widgets/Print",
     "esri/widgets/LayerList",
-    "esri/widgets/Zoom/ZoomViewModel"//加个用ViewModel
+    "esri/widgets/Zoom/ZoomViewModel"//加个用ViewModel, 然后就用react, 如果学会react可以回头看看
 ], function (
     EsriMap,
     VectorTileLayer,
@@ -29,14 +29,13 @@ require([
     LayerList,
     ZoomViewModel //加个用ViewModel, 后面是react 有点听不懂, 可以去下载code研究下
 ) {
-
         const fLayer = new FeatureLayer({
             url: "http://services.arcgis.com/p3UBboyC0NH1uCie/arcgis/rest/services/LA_Crime_WebMap/FeatureServer/0",
             definitionExpression: "GANG_RELATED = 'YES'",
             outFields: ["*"]
         });
 
-        const template = new PopupTemplate({
+        const template = new PopupTemplate({ //!!!可以改PopopTemplate
             title: "{TYPE}",
             content: "<p>{CATEGORY}</p>" +
             "<ul><li>Description: {STAT_DESC}</li>" +
